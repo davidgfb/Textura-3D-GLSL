@@ -21,10 +21,12 @@ float d_Esfera(vec3 p, float r) {
 
 void mainImage( out vec4 fragColor, vec2 fragCoord ) { 
     fragCoord *= 1e3 / iResolution.x;
+    
+    float r = 225.0;
 
-    vec3 p = vec3(fragCoord, float(iFrame / 2)) - 100.0*vec3(5,2.75,2);
+    vec3 p = vec3(fragCoord, float(iFrame)) - 100.0*vec3(5,2.75,r/50.0);
 
-    float col = d_Esfera(p, 1e2);
+    float col = d_Esfera(p, r);
 
     /*
     fragCoord *= 1e3 / iResolution.x;
